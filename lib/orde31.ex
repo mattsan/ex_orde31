@@ -42,15 +42,14 @@ defmodule Orde31 do
     [d0 | ds] = Integer.digits(x, d)
     ds
     |> Enum.reduce(d0, fn
-      _, false ->
-        false
+      x1, x1 ->
+        x1
 
-      x1, x0 ->
-        if (x0 == x1) || (rem(x0 + 1, d) == x1) do
-          x1
-        else
-          false
-        end
+      x1, x0 when rem(x0 + 1, d) == x1 ->
+        x1
+
+      _, _ ->
+        false
     end)
   end
 end
