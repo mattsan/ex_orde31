@@ -2,6 +2,8 @@ defmodule Orde31Test do
   use ExUnit.Case
   doctest Orde31
 
+  @moduletag timeout: 300_000
+
   import Orde31
 
   test "0", do: assert solve("4,1313,3012") == "12"
